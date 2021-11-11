@@ -1,0 +1,54 @@
+Step-1
+
+Register your profile on https://earthdata.nasa.gov/
+See your profile name displayed on https://search.earthdata.nasa.gov/search
+Go to https://urs.earthdata.nasa.gov/profile
+and follow the steps shown in "Data ACCESS" in the https://lpdaac.usgs.gov/resources/faqs/
+which says 
+How can I bulk download data distributed by the LP DAAC? 
+  "Bulk download options are available from DAAC2Disk as a script that can be downloaded and executed ... Earthdata login account."
+TO do so Go to https://urs.earthdata.nasa.gov/users/YOURNAME/authorized_apps
+Add "LP DAAC Data Pool" to authorize app
+Now select the data you want to donload from https://search.earthdata.nasa.gov/search
+Apply filters to sort the data from left hand side panel and press "Download ALL" in green
+Select downlaod data to generate the list of files (https://search.earthdata.nasa.gov/downloads/1654643213)
+Save the list of files under the "Download files" Tab
+Now the list of file is ready for download.
+
+
+Step-2
+Download Cygwin from https://cygwin.com/install.html as per your system (32/64 bit)!!
+a) Start on the setup process
+b) Install from Interner
+c) Install for ALL USER (Recommended)
+d) Click next
+e) Use System Proxy Settings and Click next
+f) Select first mirror and Click next
+g) You will get the select packages.....
+  (i) Select "Full" on view tab and Search "wget" and press enter
+  (ii) Dounle click on 'wget' untill its current version (1.21.2-1) and status is displayed (keep) 
+  (iii) Search "curl" and press enter and follow step (ii) 
+h) Press next, next, and complete the process with finish (add shortcut on desktop) 
+
+
+Step-3
+Copy the saved downloaded "file list" to C:\cygwin64\home\YOURNAME\
+Open CYGWIN Terminal from desktop and follow these steps carefully:
+  (i) Give permision to the file using chmod command
+          chmod 777 list.txt
+  (ii) use wget command to download files
+          wget --user-YOUREARTHDATAUSERNAME --ask-password -i list
+  (iii) The terminal will ask he EARTHDATAPASSWORD for authentification. Type the password and press enter
+  
+The terminal will show the progress of the files downloaded from the list
+
+
+Please note it will download the files in the C:\cygwin64\home\YOURNAME\ folder
+so make sure the C drive has sufficient space.
+
+
+
+
+
+
+
